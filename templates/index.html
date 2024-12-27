@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #8e44ad;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #8e44ad;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #732d91;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #444;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .recipe-image {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .recipe-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        footer a {
+            color: #8e44ad;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recipe Generator AI</h1>
+    </header>
+
+    <div class="container">
+        <form action="/" method="POST">
+            <label for="ingredients">Ingredients (comma separated):</label>
+            <input type="text" id="ingredients" name="ingredients" required>
+
+            <label for="diet">Diet:</label>
+            <input type="text" id="diet" name="diet" required>
+
+            <label for="time">Time (in minutes):</label>
+            <input type="text" id="time" name="time" required>
+
+            <label for="cuisine">Cuisine:</label>
+            <input type="text" id="cuisine" name="cuisine" required>
+
+            <input type="submit" value="Generate Recipe">
+        </form>
+
+        {% if recipe %}
+        <h2>Generated Recipe</h2>
+        <p>{{ recipe }}</p>
+
+      
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>Note: The AI-generated recipe might contain errors or be incomplete.</p>
+    </footer>
+</body>
+</html>
