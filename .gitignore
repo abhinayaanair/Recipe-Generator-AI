@@ -1,3 +1,8 @@
 recipeenv
 logs
 Indian Recipe Dataset.csv
+results/checkpoint-2061/config.json
+results/checkpoint-2061/model.safetensors
+results/checkpoint-2061/tokenizer_config.json
+results/checkpoint-2061/special_tokens_map.json
+results/checkpoint-2061/spiece.model
