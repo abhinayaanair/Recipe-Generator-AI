@@ -10,7 +10,7 @@ tokenizer = T5Tokenizer.from_pretrained(checkpoint)
 model = T5ForConditionalGeneration.from_pretrained(checkpoint)
 model = model.to("cuda")  # Move the model to GPU if available
 
-# Define the route for the home page
+# Define the route for the home page (frontend)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     generated_recipe = None
