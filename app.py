@@ -8,8 +8,8 @@ app = Flask(__name__)
 checkpoint = "./results/checkpoint-2061"
 tokenizer = T5Tokenizer.from_pretrained(checkpoint)
 model = T5ForConditionalGeneration.from_pretrained(checkpoint)
-model = model.to("cuda")  # Move the model to GPU if available
-
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = model.to(device) 
 # Define the route for the home page (frontend)
 @app.route('/', methods=['GET', 'POST'])
 def index():
