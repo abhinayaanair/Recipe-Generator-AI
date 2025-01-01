@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from transformers import T5Tokenizer, T5ForConditionalGeneration
+import torch
 
 # Initialize the Flask app
 app = Flask(__name__)
